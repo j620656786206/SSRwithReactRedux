@@ -967,13 +967,20 @@ var _reactDom = __webpack_require__(18);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _Home = __webpack_require__(32);
+var _reactDomRouter = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"react-dom-router\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 
-var _Home2 = _interopRequireDefault(_Home);
+var _Routes = __webpack_require__(33);
+
+var _Routes2 = _interopRequireDefault(_Routes);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_reactDom2.default.hydrate(_react2.default.createElement(_Home2.default, null), document.querySelector('#root')); // Start point for the client side application
+// Start point for the client side application
+_reactDom2.default.hydrate(_react2.default.createElement(
+  _reactDomRouter.BrowserRouter,
+  null,
+  _react2.default.createElement(_Routes2.default, null)
+), document.querySelector('#root'));
 
 /***/ }),
 /* 16 */
@@ -21211,6 +21218,37 @@ var Home = function Home() {
 };
 
 exports.default = Home;
+
+/***/ }),
+/* 33 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(4);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = __webpack_require__(18);
+
+var _Home = __webpack_require__(32);
+
+var _Home2 = _interopRequireDefault(_Home);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = function () {
+  return _react2.default.createElement(
+    'div',
+    null,
+    _react2.default.createElement(_reactDom.Route, { exact: true, path: '/', component: _Home2.default })
+  );
+};
 
 /***/ })
 /******/ ]);
