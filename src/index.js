@@ -11,7 +11,7 @@ app.get('*', (req, res) => {
   // Some logic to initialize
   // and load data into the store
 
-  res.send(renderer(req), store);
+  res.send(renderer(req, store));
 });
 
 app.listen(3000, () => {
