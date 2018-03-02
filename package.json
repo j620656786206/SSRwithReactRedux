@@ -7,7 +7,9 @@
     "dev": "npm-run-all --parallel dev:*",
     "dev:server": "nodemon --watch build --exec node build/bundle.js",
     "dev:buildserver": "webpack --config webpack.server.js --watch",
-    "dev:buildclient": "webpack --config webpack.client.js --watch"
+    "dev:buildclient": "webpack --config webpack.client.js --watch",
+    "build": "NODE_ENV=production webpack --config webpack.server.js -p && webpack --config webpack.client.js -p",
+    "start": "node build/bundle.js"
   },
   "author": "",
   "license": "ISC",
